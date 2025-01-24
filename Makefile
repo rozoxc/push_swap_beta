@@ -6,19 +6,18 @@
 #    By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 14:29:06 by ababdoul          #+#    #+#              #
-#    Updated: 2025/01/22 14:29:10 by ababdoul         ###   ########.fr        #
+#    Updated: 2025/01/24 21:19:52 by ababdoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -fsanitize=address
 NAME = push_swap
-HEADER = push_swap.h
+HEADER = includes/push_swap.h
 SRCS = src/cost.c \
 	   src/do_move.c \
 	   src/initialization.c \
 	   src/input_check.c \
-	   src/input_check_utils.c \
 	   src/main.c \
 	   src/position.c \
 	   src/push.c \
@@ -28,7 +27,11 @@ SRCS = src/cost.c \
 	   src/sort_tiny.c \
 	   src/stack.c \
 	   src/swap.c\
-	   src/utils.c
+	   utils/utils.c \
+	   utils/input_check_utils.c \
+	   utils/ft_split.c \
+	   utils/ft_count_number.c \
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -36,9 +39,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-mandatory/%.o: mandatory/%.c $(HEADER)
-	$(CC) $(FLAGS) -I./mandatory -c $< -o $@
+src/%.o: src/%.c $(HEADER)
+	$(CC) $(FLAGS) -I./src -c $< -o $@
 
+utils/%.o: utils/%.c $(HEADER)
+	$(CC) $(FLAGS) -I./utils -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

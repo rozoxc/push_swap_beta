@@ -6,13 +6,13 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:27:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/23 16:45:57 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:14:51 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	arg_is_number(char *av)
+int	arg_is_number(char *av)
 {
 	int	i;
 
@@ -26,8 +26,7 @@ static int	arg_is_number(char *av)
 	return (1);
 }
 
-
-static int	have_duplicates(char **av)
+int	have_duplicates(char **av)
 {
 	int	i;
 	int	j;
@@ -47,7 +46,7 @@ static int	have_duplicates(char **av)
 	return (0);
 }
 
-static int	arg_is_zero(char *av)
+int	arg_is_zero(char *av)
 {
 	int	i;
 
@@ -61,7 +60,7 @@ static int	arg_is_zero(char *av)
 	return (1);
 }
 
-int	is_correct_input(char **av, int ac)
+int	is_correct_input(char **av)
 {
 	int	i;
 	int	nb_zeros;
@@ -70,14 +69,23 @@ int	is_correct_input(char **av, int ac)
 	i = 1;
 	while (av[i])
 	{
-		if (!arg_is_number(av[i]))
-			return (0);
+		// if (arg_is_number(av[i]) == 0)
+		// {
+		// 	printf("first :)\n");
+		// 	return (0);
+		// }
 		nb_zeros += arg_is_zero(av[i]);
 		i++;
 	}
 	if (nb_zeros > 1)
+	{
+		printf("seconde :)\n");
 		return (0);
+	}
 	if (have_duplicates(av))
+	{
+		printf("third :) \n");
 		return (0);
+	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:04:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/23 16:45:42 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:41:14 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
+void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		do_sa(stack_a);
@@ -42,11 +42,17 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
+	int		size;
 
+	size = ft_count_numbers(av, ac);
+	printf("size == %d\n", size);
 	if (ac < 2)
 		return (0);
-	if (!is_correct_input(av, ac))
+	if (!is_correct_input(av))
+	{
+		printf("here :)\n");
 		exit_error(NULL, NULL);
+	}
 	stack_b = NULL;
 	stack_a = fill_stack_values(ac, av);
 	stack_size = get_stack_size(stack_a);

@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:44:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/22 20:38:59 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/24 16:53:01 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,31 @@
 
 t_stack	*fill_stack_values(int ac, char **av)
 {
-	t_stack		*stack_a;
-	long int	nb;
-	int			i;
+	t_stack	*stack_a;
+	char	**split;
+	long	nb;
+	int		i;
+	int		j;
 
 	stack_a = NULL;
-	nb = 0;
 	i = 1;
 	while (i < ac)
 	{
-		nb = ft_atoi(av[i]);
-		if (nb > INT_MAX || nb < INT_MIN)
-			exit_error(&stack_a, NULL);
-		if (i == 1)
-			stack_a = stack_new((int)nb);
-		else
+		split = ft_split(av[i], ' ');
+		j = 0;
+		while (split[j])
+		{
+			nb = ft_atoi(split[j]);
+			if (nb < INT_MIN || nb > INT_MAX)
+			{
+				free(split);
+				exit_error(&stack_a, NULL);
+			}
 			stack_add_bottom(&stack_a, stack_new((int)nb));
+			free(split[j]);
+			j++;
+		}
+		free(split);
 		i++;
 	}
 	return (stack_a);
