@@ -6,16 +6,12 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:04:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/24 21:41:14 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:23:29 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void f()
-{
-	system("leaks push_swap");
-}
 int	is_sorted(t_stack *stack)
 {
 	while (stack->next != NULL)
@@ -31,7 +27,7 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		do_sa(stack_a);
-	else if (stack_size == 3)
+	else if (stack_size == 3 && !is_sorted(*stack_a))
 		tiny_sort(stack_a);
 	else if (stack_size > 3 && !is_sorted(*stack_a))
 		sort(stack_a, stack_b);
@@ -42,24 +38,19 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
-	int		size;
 
-	size = ft_count_numbers(av, ac);
-	printf("size == %d\n", size);
 	if (ac < 2)
 		return (0);
-	if (!is_correct_input(av))
-	{
-		printf("here :)\n");
+	if (is_correct_input(av, ac) == 0)
 		exit_error(NULL, NULL);
-	}
 	stack_b = NULL;
 	stack_a = fill_stack_values(ac, av);
+	if (is_diplucated(stack_a) == 0)
+		exit_error(NULL, NULL);
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
-	// f();
 	return (0);
 }

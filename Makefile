@@ -6,7 +6,7 @@
 #    By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 14:29:06 by ababdoul          #+#    #+#              #
-#    Updated: 2025/01/24 21:19:52 by ababdoul         ###   ########.fr        #
+#    Updated: 2025/01/26 15:18:39 by ababdoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS = src/cost.c \
 	   utils/input_check_utils.c \
 	   utils/ft_split.c \
 	   utils/ft_count_number.c \
+	   utils/is_diplucated.c \
 
 OBJS = $(SRCS:.c=.o)
 

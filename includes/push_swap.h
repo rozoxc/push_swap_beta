@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/24 16:00:49 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:18:56 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,12 @@ char		**ft_split(char const *s, char c);
 
 void		exit_error(t_stack **stack_a, t_stack **stack_b);
 
-/* Input Check */
+/*parsing functions */
 
-int			is_correct_input(char **av);
+int			is_correct_input(char **av, int size);
 int			is_digit(char c);
 int			is_sign(char c);
 int			nbstr_cmp(const char *s1, const char *s2);
+int is_diplucated(t_stack *stack_a);
 
 #endif

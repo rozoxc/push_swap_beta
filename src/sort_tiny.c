@@ -6,13 +6,13 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:41:01 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/22 20:43:05 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:48:34 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	find_highest_index(t_stack *stack)
+int	find_highest_index(t_stack *stack)
 {
 	int		index;
 
