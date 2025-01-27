@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:27:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/26 10:25:07 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:28:09 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	my_free(char **s)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (s[j] != NULL)
@@ -24,6 +24,7 @@ void	my_free(char **s)
 	}
 	free(s);
 }
+
 int	ft_is_digit(char *str)
 {
 	int	i;
@@ -64,11 +65,10 @@ int	arg_is_zero(char *av)
 	return (1);
 }
 
-int	is_correct_input(char **av, int size)
+int	is_correct_input(char **av)
 {
 	int	i;
 	int	nb_zeros;
-	(void)size;
 
 	nb_zeros = 0;
 	i = 1;

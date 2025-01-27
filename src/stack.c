@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:26:12 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/24 16:09:06 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:29:02 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	stack_add_bottom(t_stack **stack, t_stack *new)
 	tail = get_stack_bottom(*stack);
 	tail->next = new;
 }
-
 
 int	get_stack_size(t_stack	*stack)
 {

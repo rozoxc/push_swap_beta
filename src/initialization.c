@@ -6,39 +6,46 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:44:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/24 16:53:01 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:12:31 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+void	process_split(t_stack **stack_a, char **split)
+{
+	long	nb;
+	int		j;
+
+	j = 0;
+	while (split[j])
+	{
+		nb = ft_atoi(split[j]);
+		if (nb < INT_MIN || nb > INT_MAX)
+		{
+			free(split);
+			exit_error(stack_a, NULL);
+		}
+		stack_add_bottom(stack_a, stack_new((int)nb));
+		free(split[j]);
+		j++;
+	}
+}
 
 t_stack	*fill_stack_values(int ac, char **av)
 {
 	t_stack	*stack_a;
 	char	**split;
-	long	nb;
 	int		i;
-	int		j;
 
 	stack_a = NULL;
 	i = 1;
 	while (i < ac)
 	{
 		split = ft_split(av[i], ' ');
-		j = 0;
-		while (split[j])
-		{
-			nb = ft_atoi(split[j]);
-			if (nb < INT_MIN || nb > INT_MAX)
-			{
-				free(split);
-				exit_error(&stack_a, NULL);
-			}
-			stack_add_bottom(&stack_a, stack_new((int)nb));
-			free(split[j]);
-			j++;
-		}
+		if (!split)
+			exit_error(&stack_a, NULL);
+		process_split(&stack_a, split);
 		free(split);
 		i++;
 	}

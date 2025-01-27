@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:40:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/22 20:43:53 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:33:28 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
-
 
 void	exit_error(t_stack **stack_a, t_stack **stack_b)
 {

@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:04:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/26 15:23:29 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:30:53 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (0);
-	if (is_correct_input(av, ac) == 0)
+	if (is_correct_input(av) == 0)
 		exit_error(NULL, NULL);
 	stack_b = NULL;
 	stack_a = fill_stack_values(ac, av);
