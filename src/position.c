@@ -6,13 +6,13 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:33 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/28 15:22:33 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/28 18:08:25 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	get_position(t_stack **stack)
+void	get_position(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		i;
@@ -49,7 +49,7 @@ int	get_lowest_index_position(t_stack **stack)
 	return (lowest_pos);
 }
 
-static int	get_target(t_stack **a, int b_idx,
+int	get_target(t_stack **a, int b_idx,
 								int target_idx, int target_pos)
 {
 	t_stack	*tmp_a;

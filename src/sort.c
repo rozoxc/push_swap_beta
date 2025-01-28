@@ -6,13 +6,13 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:57 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/28 15:22:20 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/28 18:11:31 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
+void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 {
 	int	stack_size;
 	int	pushed;
@@ -39,7 +39,7 @@ static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-static void	shift_stack(t_stack **stack_a)
+void	shift_stack(t_stack **stack_a)
 {
 	int	lowest_pos;
 	int	stack_size;
@@ -64,13 +64,6 @@ static void	shift_stack(t_stack **stack_a)
 	}
 }
 
-/* sort:
-*	Sorting algorithm for a stack larger than 3.
-*		Push everything but 3 numbers to stack B.
-*		Sort the 3 numbers left in stack A.
-*		Calculate the most cost-effective move.
-*		Shift elements until stack A is in order.
-*/
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	push_all_save_three(stack_a, stack_b);
@@ -81,6 +74,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		get_cost(stack_a, stack_b);
 		do_cheapest_move(stack_a, stack_b);
 	}
-	if (!is_sorted(*stack_a))
+	if (is_sorted(*stack_a) == 0)
 		shift_stack(stack_a);
 }

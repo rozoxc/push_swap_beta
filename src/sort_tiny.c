@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:53 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/28 15:22:23 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:54:54 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	tiny_sort(t_stack **stack)
 {
 	int		highest;
 
-	if (is_sorted(*stack))
-		return ;
 	highest = find_highest_index(*stack);
 	if ((*stack)->index == highest)
 		do_ra(stack);
