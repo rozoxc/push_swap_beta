@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 14:44:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/27 16:12:31 by ababdoul         ###   ########.fr       */
+/*   Created: 2025/01/28 15:21:13 by ababdoul          #+#    #+#             */
+/*   Updated: 2025/01/28 15:22:43 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	process_split(t_stack **stack_a, char **split)
 	int		j;
 
 	j = 0;
-	while (split[j])
+	while (split[j] != NULL)
 	{
 		nb = ft_atoi(split[j]);
 		if (nb < INT_MIN || nb > INT_MAX)

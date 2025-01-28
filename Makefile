@@ -6,12 +6,12 @@
 #    By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 14:29:06 by ababdoul          #+#    #+#              #
-#    Updated: 2025/01/26 15:18:39 by ababdoul         ###   ########.fr        #
+#    Updated: 2025/01/28 14:59:37 by ababdoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-FLAGS = -Wall -Werror -Wextra -fsanitize=address
+FLAGS = -Wall -Werror -Wextra
 NAME = push_swap
 HEADER = includes/push_swap.h
 SRCS = src/cost.c \
