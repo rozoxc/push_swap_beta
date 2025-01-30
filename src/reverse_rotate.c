@@ -6,13 +6,13 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:45 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/28 15:22:29 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/28 20:02:26 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	rev_rotate(t_stack **stack)
+void	rev_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*tail;

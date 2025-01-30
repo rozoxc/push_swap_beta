@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:42 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/01/27 15:43:12 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:25:08 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void		sort(t_stack **stack_a, t_stack **stack_b);
 /* Position */
 
 int			get_lowest_index_position(t_stack **stack);
-void		get_target_position(t_stack **stack_a, t_stack **stack_b);
+void		get_target_position(t_stack **s_a, t_stack **s_b);
 
 /* Cost */
 

@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:33 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/28 18:08:25 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:27:11 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_position(t_stack **stack)
 
 	tmp = *stack;
 	i = 0;
-	while (tmp)
+	while (tmp != NULL)
 	{
 		tmp->pos = i;
 		tmp = tmp->next;
@@ -79,18 +79,18 @@ int	get_target(t_stack **a, int b_idx,
 	return (target_pos);
 }
 
-void	get_target_position(t_stack **a, t_stack **b)
+void	get_target_position(t_stack **s_a, t_stack **s_b)
 {
 	t_stack	*tmp_b;
 	int		target_pos;
 
-	tmp_b = *b;
-	get_position(a);
-	get_position(b);
+	tmp_b = *s_b;
+	get_position(s_a);
+	get_position(s_b);
 	target_pos = 0;
 	while (tmp_b)
 	{
-		target_pos = get_target(a, tmp_b->index, INT_MAX, target_pos);
+		target_pos = get_target(s_a, tmp_b->index, INT_MAX, target_pos);
 		tmp_b->target_pos = target_pos;
 		tmp_b = tmp_b->next;
 	}

@@ -6,13 +6,13 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:41 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/28 15:22:31 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/01/28 20:02:22 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	push(t_stack **src, t_stack **dest)
+void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*tmp;
 
