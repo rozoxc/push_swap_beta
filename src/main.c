@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:28 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/30 17:11:17 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/02/02 14:59:09 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		stack_size;
 
-	printf("%s", av[1]);
 	if (ac < 2)
 		return (0);
 	if (is_correct_input(av) == 0)

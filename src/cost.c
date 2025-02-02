@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 12:22:58 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/22 20:38:28 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/02/02 21:17:42 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	tmp_b = *stack_b;
 	size_a = get_stack_size(tmp_a);
 	size_b = get_stack_size(tmp_b);
-	while (tmp_b)
+	while (tmp_b !- NULL)
 	{
 		tmp_b->cost_b = tmp_b->pos;
 		if (tmp_b->pos > size_b / 2)

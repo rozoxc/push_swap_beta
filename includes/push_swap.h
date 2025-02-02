@@ -6,14 +6,13 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 13:47:42 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/30 19:37:40 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/02/02 12:54:30 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
