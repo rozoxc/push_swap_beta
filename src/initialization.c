@@ -6,16 +6,17 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:13 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/02/02 15:03:36 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:03:10 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 void	process_split(t_stack **stack_a, char **split)
 {
-	long	nb;
-	int		j;
+	long long	nb;
+	int			j;
 
 	j = 0;
 	while (split[j] != NULL)
@@ -23,6 +24,7 @@ void	process_split(t_stack **stack_a, char **split)
 		nb = ft_atoi(split[j]);
 		if (nb < INT_MIN || nb > INT_MAX)
 		{
+			free(split[j]);
 			free(split);
 			exit_error(stack_a, NULL);
 		}
