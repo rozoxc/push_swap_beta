@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:33 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/01/29 15:27:11 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/02/07 00:18:39 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	get_lowest_index_position(t_stack **stack)
 	lowest_index = INT_MAX;
 	get_position(stack);
 	lowest_pos = tmp->pos;
-	while (tmp)
+	while (tmp != NULL)
 	{
 		if (tmp->index < lowest_index)
 		{
@@ -55,7 +55,7 @@ int	get_target(t_stack **a, int b_idx,
 	t_stack	*tmp_a;
 
 	tmp_a = *a;
-	while (tmp_a)
+	while (tmp_a != NULL)
 	{
 		if (tmp_a->index > b_idx && tmp_a->index < target_idx)
 		{
@@ -88,7 +88,7 @@ void	get_target_position(t_stack **s_a, t_stack **s_b)
 	get_position(s_a);
 	get_position(s_b);
 	target_pos = 0;
-	while (tmp_b)
+	while (tmp_b != NULL)
 	{
 		target_pos = get_target(s_a, tmp_b->index, INT_MAX, target_pos);
 		tmp_b->target_pos = target_pos;

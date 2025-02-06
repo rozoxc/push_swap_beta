@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:40:24 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/02/06 15:57:50 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:58:01 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	exit_error(t_stack **stack_a, t_stack **stack_b)
 	if (stack_b == NULL || *stack_b != NULL)
 		free_stack(stack_b);
 	write(2, "Error\n", 6);
+	exit(1);
 }
 
 long int	ft_atoi(const char *str)

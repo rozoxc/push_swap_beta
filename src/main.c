@@ -6,7 +6,7 @@
 /*   By: ababdoul <ababdoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:21:28 by ababdoul          #+#    #+#             */
-/*   Updated: 2025/02/06 15:57:33 by ababdoul         ###   ########.fr       */
+/*   Updated: 2025/02/06 20:54:15 by ababdoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ int	main(int ac, char **av)
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
+	while(stack_a != NULL)
+	{
+		printf("%d index ==> %d \n", stack_a->value, stack_a->index);
+		stack_a = stack_a->next;
+	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
